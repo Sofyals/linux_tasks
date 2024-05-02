@@ -1,0 +1,17 @@
+echo -n "Enter your age: "
+read AGE
+echo -n "Category of $AGE is "
+case $AGE in
+    [0-9]|1[0-3])
+        echo "Child"
+        ;;
+    1[4-8])
+        echo "Teenager"
+        ;;
+    [1-4][9-9]|50)
+        echo "Adult"
+        ;;
+    *)
+        echo "Aged"
+        ;;
+esac
