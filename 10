@@ -1,0 +1,9 @@
+current_hour=$(date +%H)
+
+if [ $current_hour -ge 6 ] && [ $current_hour -lt 12 ]; then
+    echo "Доброе утро!"
+elif [ $current_hour -ge 12 ] && [ $current_hour -lt 18 ]; then
+    echo "Добрый день!"
+else
+    echo "Добрый вечер!"
+fi
