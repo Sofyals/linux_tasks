@@ -1,0 +1,33 @@
+read NUM1
+read  OPERATOR
+case "$OPERATOR" in
+    +)
+        read -p "Enter the second number: " NUM2
+        RESULT=$((NUM1 + NUM2))
+        ;;
+    -)
+        read -p "Enter the second number: " NUM2
+        RESULT=$((NUM1 - NUM2))
+        ;;
+    \*)
+        read -p "Enter the second number: " NUM2
+        RESULT=$((NUM1 * NUM2))
+        ;;
+    /)
+        read -p "Enter the second number: " NUM2
+        if [ "$NUM2" -eq 0 ]; then
+            echo "Division by zero is not allowed."
+            exit 1
+        fi
+        RESULT=$((NUM1 / NUM2))
+        ;;
+    %)
+        read -p "Enter the second number: " NUM2
+        RESULT=$((NUM1 % NUM2))
+        ;;
+    *)
+        echo "Invalid operator"
+        exit 1
+        ;;
+esac
+echo "Result: $RESULT"
